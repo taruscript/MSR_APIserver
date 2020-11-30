@@ -1,5 +1,6 @@
 .env
 config.json
+upload/
 
 
 # Byte-compiled / optimized / DLL files
