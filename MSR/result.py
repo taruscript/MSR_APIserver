@@ -22,9 +22,3 @@ def execRecognition(speakerGroupId: str, audioByte: bytes):
     except JSONDecodeError:
         raise(ValueError("話者識別の結果の取得に失敗しました"))
     return result
-
-def WssExecRecognition(speakerGroupId: str, audioByte: bytes):
-    wss_url = "wss://service.mimi.fd.ai"
-    headers = {
-        "Authorization": f"Bearer {accessToken}"
-    }
