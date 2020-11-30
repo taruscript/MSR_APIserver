@@ -31,14 +31,6 @@ scope_urls = [
     "https://apis.mimi.fd.ai/auth/srs/trainers.w"
 ]
 
-# 環境変数が設定されているか
-def none_check():
-    env_vars = [applicationId, clientId, clientSecret]
-    for var in env_vars:
-        if var is None:
-            raise(TypeError("ある環境変数が設定されていません。'.env'ファイルを確認してください"))
-
-
 # 成功したかどうか
 def success_check(res: dict):
     status = res["status"]
@@ -51,7 +43,6 @@ def success_check(res: dict):
         return
 
 def getAccessToken():
-    none_check()
     url = 'https://auth.mimi.fd.ai/v2/token'
     scope = ",".join(scope_urls).replace(",", ";")
     data = {
